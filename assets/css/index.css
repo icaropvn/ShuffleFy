@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    transition: background-color 0.2s ease-out;
+}
+
+body.dark {
+    background-color: #212121;
+}
+
+body.light {
+    background-color: #FFFFFF;
+}
+
+#theme-container {
+    display: block;
+}
+
+#checkbox {
+    display: none;
+}
+
+#theme-button {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 0.5rem;
+    float: right;
+    margin: 20px 20px 0 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+body.dark #theme-button {
+    background-color: #181818;
+}
+
+body.light #theme-button {
+    background-color: #ebebeb;
+}
+
+.theme-icons {
+    position: relative;
+    width: 90px;
+    height: 45px;
+    padding: 10.5px;
+    transition: all 0.2s ease-out;
+}
+
+.theme-icons.no-transition {
+    transition: none;
+}
+
+.moon, .sun {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    user-select: none;
+}
+
+.moon {
+    left: 10.5px;
+}
+
+.sun {
+    right: 10.5px;
+}
+
+#main-container {
+    display: block;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    top: 17vh;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+body.dark .material-symbols-outlined {
+    color: #e6e6e6;
+}
+
+body.light .material-symbols-outlined {
+    color: #181818;
+}
+
+#logo {
+    display: block;
+    width: 220px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: Commissioner, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 40px;
+    transition: color 0.1s ease-out;
+}
+
+body.dark h1 {
+    color: #FFFFFF;
+}
+
+body.light h1 {
+    color: #181818;
+}
+
+p {
+    display: block;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.1s ease-out;
+}
+
+body.dark p {
+    color: #FFFFFF;
+    font-weight: 200;
+}
+
+body.light p {
+    color: #181818;
+    font-weight: 300;
+}
+
+#login-button {
+    display: block;
+    margin: 60px auto 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+    width: 260px;
+    height: 45px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #2AEA73;
+    transition: all 0.1s ease-out;
+}
+
+body.dark #login-button:hover {
+    background-color: #FFFFFF;
+}
+
+body.light #login-button:hover {
+    background-color: #181818;
+    color: #FFFFFF;
+}
