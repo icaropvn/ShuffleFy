@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* Commissioner Font */
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
+
+/* Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #212121;
+    color: #FFFFFF;
+    font-family: Inter, Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10vw;
+}
+
+h1 {
+    font-family: Commissioner, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin: 20px 50px 0 0;
+}
+
+#error-code {
+    font-size: 1.3rem;
+}
+
+#error-code strong {
+    font-weight: 500;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 160px;
+    background-color: #2AEA73;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 12px;
+    margin-top: 50px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover .material-symbols-outlined {
+    transform: translateX(-5px);
+}
+
+a .material-symbols-outlined {
+    position: relative;
+    font-weight: 300;
+    transition: transform 0.075s ease-out;
+}
+
+img {
+    width: 300px;
+    margin-right: 10vw;
+}
+
+img:hover {
+    animation: logo-rotation 0.4s ease-in-out;
+}
+
+@keyframes logo-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}

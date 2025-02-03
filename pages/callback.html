@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShuffleFy - Shuffle your playlists</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/callback.css">
+    <link rel="stylesheet" href="../assets/css/skeleton-elements.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+</head>
+<body class="dark">
+    <header>
+        <div class="skeleton-element" id="skeleton-welcome-msg">
+            <div class="skeleton-shimmer"></div>
+        </div>
+        <h1 id="welcome-msg"></h1>
+
+        <div class="skeleton-element" id="skeleton-buttons">
+            <div class="skeleton-shimmer"></div>
+        </div>
+        <div class="buttons-container">
+            <div id="theme-container">
+                <label for="checkbox" id="theme-button">
+                    <input type="checkbox" class="checkbox" id="checkbox"/>
+                    <div class="theme-icons">
+                        <span class="material-symbols-outlined moon">dark_mode</span>
+                        <span class="material-symbols-outlined sun">light_mode</span>
+                    </div>
+                </label>
+                <span id="theme-tooltip">Change theme</span>
+            </div>
+
+            <img id="profile-picture" src="#" alt="User Profile Picture">
+        </div>
+    </header>
+
+    <main>
+        <div class="skeleton-element" id="skeleton-divider">
+            <div class="skeleton-shimmer"></div>
+        </div>
+        <div class="divider">
+            <h2>Your playlists</h2>
+        </div>
+
+        <section class="playlists-container">
+            <div class="skeleton-playlist-container">
+                <div class="skeleton-element skeleton-playlist">
+                    <div class="skeleton-shimmer"></div>
+                </div>
+                <div class="skeleton-element skeleton-button">
+                    <div class="skeleton-shimmer"></div>
+                </div>
+            </div>
+            <div class="skeleton-playlist-container">
+                <div class="skeleton-element skeleton-playlist">
+                    <div class="skeleton-shimmer"></div>
+                </div>
+                <div class="skeleton-element skeleton-button">
+                    <div class="skeleton-shimmer"></div>
+                </div>
+            </div>
+            <div class="skeleton-playlist-container">
+                <div class="skeleton-element skeleton-playlist">
+                    <div class="skeleton-shimmer"></div>
+                </div>
+                <div class="skeleton-element skeleton-button">
+                    <div class="skeleton-shimmer"></div>
+                </div>
+            </div>
+        </section>
+        
+        <dialog id="shuffle-confirmation">
+            <h1>Are you sure?</h1>
+            <p>Once shuffled, you can't revert the playlist to the original order. Are you sure you want to proceed?</p>
+
+            <label id="dont-ask-again-container" for="confirm-ask-again">
+                <input type="checkbox" id="confirm-ask-again">
+                <label for="confirm-ask-again" id="don-ask-again-check-icon">
+                    <span class="material-symbols-outlined">check</span>
+                </label>
+                <label for="confirm-ask-again">Don't ask me again</label>
+            </label>
+
+            <div id="confirmation-btns-container">
+                <button id="confirm-shuffle">Ok</button>
+                <button id="cancel-shuffle">Cancel</button>
+            </div>
+        </dialog>
+    </main>
+
+    <aside>
+        <div id="notification-container"></div>
+    </aside>
+
+    <script src="../assets/js/callback.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script src="../assets/js/shuffle-playlist.js"></script>
+</body>
+</html>
