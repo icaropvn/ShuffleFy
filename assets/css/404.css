@@ -24,31 +24,39 @@ body {
 
 main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    flex-direction: column;
     height: 100%;
-    padding: 10vw;
+    margin: 0 50px 0 50px;
 }
 
-h1 {
+#code-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#code-container span {
     font-family: Commissioner, Arial, sans-serif;
-    font-weight: 600;
-    font-size: 4rem;
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+#code-container img {
+    width: 80px;
+    margin-top: 10px;
 }
 
 p {
-    font-size: 1.5rem;
     font-weight: 200;
-    margin: 20px 50px 0 0;
-}
-
-#error-code {
     font-size: 1.3rem;
+    margin-top: 10px;
+    text-align: center;
 }
 
-#error-code strong {
-    font-weight: 500;
+p:last-of-type {
+    margin-top: 30px;
 }
 
 a {
@@ -62,7 +70,7 @@ a {
     border: none;
     border-radius: 5px;
     padding: 8px 10px;
-    margin-top: 50px;
+    margin-top: 30px;
     font-family: Inter, Arial, sans-serif;
     font-size: 0.9rem;
     text-decoration: none;
@@ -83,22 +91,4 @@ a .material-symbols-outlined {
     font-size: 1.4rem;
     font-weight: 300;
     transition: transform 0.075s ease-out;
-}
-
-img {
-    width: 300px;
-    margin-right: 10vw;
-}
-
-img:hover {
-    animation: logo-rotation 0.6s cubic-bezier(0.71, 0, 0.34, 1);
-}
-
-@keyframes logo-rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg);
-    }
 }
