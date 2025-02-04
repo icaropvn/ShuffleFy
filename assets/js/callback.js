@@ -2,6 +2,8 @@ const hash = window.location.hash.substring(1)
 const params = new URLSearchParams(hash)
 const accessToken = params.get('access_token')
 
+let lastScrollTop = 0
+
 function hideSkeletonScreen() {
     let skeletonBoxes = document.getElementsByClassName('skeleton-element')
     let skeletonShimmers = document.getElementsByClassName('skeleton-shimmer')
@@ -101,6 +103,12 @@ function displayPlaylists(userPlaylists) {
         shuffleButtonText.textContent = 'Shuffle'
         shuffleButton.appendChild(shuffleButtonText)
 
+        let shuffleIcon = document.createElement('span')
+        shuffleIcon.classList.add('material-symbols-outlined')
+        shuffleIcon.classList.add('shuffle-icon')
+        shuffleIcon.textContent = 'shuffle'
+        shuffleButton.appendChild(shuffleIcon)
+
         let shuffleAnimationContainer = document.createElement('div')
         shuffleAnimationContainer.classList.add('shuffle-animation-container')
         shuffleButton.appendChild(shuffleAnimationContainer)
@@ -180,6 +188,19 @@ function loadShuffleAnimation() {
 document.addEventListener('DOMContentLoaded', () => {
     let skipConfirmation = localStorage.getItem('skipConfirmation') || 'false'
     localStorage.setItem('skipConfirmation', skipConfirmation)
+})
+
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('header')
+
+    let scrollTop = window.scrollY || document.documentElement.scrollTop
+
+    if(scrollTop > lastScrollTop)
+        header.style.transform = 'translateY(-100%)'
+    else
+        header.style.transform = 'translateY(0)'
+
+    lastScrollTop = scrollTop
 })
 
 getData()

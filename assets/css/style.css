@@ -183,3 +183,157 @@ body.light #theme-tooltip {
     background-color: #181818;
     color: #FFFFFF;
 }
+
+#about-container {
+    position: relative;
+}
+
+#about-button {
+    width: 45px;
+    height: 45px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+body.dark #about-button {
+    background-color: #181818;
+    color: #FFFFFF;
+}
+
+body.light #about-button {
+    background-color: #ebebeb;
+    color: #000000;
+}
+
+#about-tooltip {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform-origin: top center;
+    transform: translate(-50%, -30px) scale(0);
+    white-space: nowrap;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    border-radius: 5px;
+    opacity: 1;
+    pointer-events: none;
+    transition: transform 0.075s ease-out,
+                opacity 0.075s ease-out,
+                background-color 0.2s ease-out,
+                color 0.2s ease-out;
+    transition-delay: 0s;
+}
+
+body.dark #about-tooltip {
+    background-color: #FFFFFF;
+    color: #181818;
+}
+
+body.light #about-tooltip {
+    background-color: #181818;
+    color: #FFFFFF;
+}
+
+#about-button:hover + #about-tooltip {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    transition: transform 0.075s ease-out 1.5s,
+                opacity 0.075s ease-out 1.5s,
+                background-color 0.2s ease-out,
+                color 0.2s ease-out;
+}
+
+#about-dialog {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    max-width: 1000px;
+    height: 80vh;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+body.dark #about-dialog {
+    background-color: #181818;
+    color: #FFFFFF;
+}
+
+#about-dialog-content {
+    overflow-y: auto;
+    height: 100%;
+    padding: 40px 50px;
+}
+
+
+#about-dialog-content::-webkit-scrollbar {
+    width: 16px;
+}
+
+#about-dialog-content::-webkit-scrollbar-thumb {
+    background: #2c2c2c;
+    border-radius: 8px;
+    border: 4px solid #181818;
+}
+
+#about-dialog #close-icon {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff3a;
+    font-weight: 300;
+    transition: background-color 0.075s ease-out,
+                color 0.075s ease-out;
+}
+
+#about-dialog #close-icon:hover {
+    background-color: #2b2b2b;
+    color: #FFFFFF;
+}
+
+#about-dialog h1 {
+    font-family: Inter, Arial, sans-serif;
+    font-size: 2rem;
+    text-align: start;
+    margin: 60px 0 20px 0;
+}
+
+#about-dialog h1:first-of-type {
+    margin: 0px 0 20px 0;
+}
+
+#about-dialog p {
+    font-size: 1.2rem;
+    text-align: justify;
+    text-indent: 40px;
+    line-height: 1.8rem;
+    margin: 0;
+}
+
+#about-dialog img {
+    display: block;
+    width: 400px;
+    border-radius: 10px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 5px 15px 0 #00000042;
+}
+
+#about-dialog a {
+    color: #2AEA73;
+}
+
+#about-dialog::backdrop {
+    background-color: #00000091;
+    backdrop-filter: blur(3px);
+}

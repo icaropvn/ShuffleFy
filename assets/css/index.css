@@ -1,9 +1,14 @@
+#buttons-container {
+    display: flex;
+    gap: 10px;
+    float: right;
+    margin: 20px 20px 0 0;
+}
+
 #theme-container {
     display: block;
     width: 45px;
     height: 45px;
-    float: right;
-    margin: 20px 20px 0 0;
 }
 
 #theme-button:hover + #theme-tooltip {

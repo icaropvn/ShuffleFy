@@ -1,9 +1,6 @@
 let themeContainer = document.getElementById('theme-button')
 let themeButton = document.getElementById('checkbox')
 let iconSlider = document.getElementsByClassName('theme-icons')[0]
-let themeTooltip = document.getElementById('theme-tooltip')
-let themeTooltipTimeout
-let isTooltipVisible = false
 
 function changeTheme(theme) {
     if(theme === 'light') {
