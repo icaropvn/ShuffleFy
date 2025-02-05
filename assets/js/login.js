@@ -1,6 +1,6 @@
 const clientId = '94c8b59bc8ae4c729724d22d2e4c3d9d'
-const redirectUri = 'https://icaropvn.github.io/ShuffleFy/pages/callback'
-// const redirectUri = 'http://127.0.0.1:5500/pages/callback.html'
+// const redirectUri = 'https://icaropvn.github.io/ShuffleFy/pages/callback'
+const redirectUri = 'http://127.0.0.1:5500/pages/callback.html'
 const scopes = 'playlist-read-private playlist-modify-private playlist-modify-public'
 
 const URLparams = {
