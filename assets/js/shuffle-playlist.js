@@ -157,12 +157,12 @@ document.addEventListener('click', async (event) => {
     if(!shuffleButton) 
         return
     
-    if(localStorage.getItem('skipConfirmation') === 'false') {
+    if(localStorage.getItem('skipConfirmation') !== 'true') {
         confirmation = await confirmShuffle()
 
         let dontShowAgainCheckbox = document.getElementById('confirm-ask-again')
         
-        if(dontShowAgainCheckbox.checked)
+        if(dontShowAgainCheckbox.checked && confirmation === true)
             localStorage.setItem('skipConfirmation', 'true')
     }
 

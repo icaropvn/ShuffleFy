@@ -13,31 +13,38 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body class="dark">
-    <div id="buttons-container">
-        <div id="about-container">
-            <button id="about-button">?</button>
-            <span id="about-tooltip">About ShuffleFy</span>
+    <header id="index-header">
+        <div id="buttons-container">
+            <div id="about-container">
+                <button id="about-button">?</button>
+                <span id="about-tooltip">About ShuffleFy</span>
+            </div>
+            <div id="theme-container">
+                <label for="checkbox" id="theme-button">
+                    <input type="checkbox" class="checkbox" id="checkbox"/>
+                    <div class="theme-icons">
+                        <span class="material-symbols-outlined moon">dark_mode</span>
+                        <span class="material-symbols-outlined sun">light_mode</span>
+                    </div>
+                </label>
+                <span id="theme-tooltip">Change theme</span>
+            </div>
         </div>
-        <div id="theme-container">
-            <label for="checkbox" id="theme-button">
-                <input type="checkbox" class="checkbox" id="checkbox"/>
-                <div class="theme-icons">
-                    <span class="material-symbols-outlined moon">dark_mode</span>
-                    <span class="material-symbols-outlined sun">light_mode</span>
-                </div>
-            </label>
-            <span id="theme-tooltip">Change theme</span>
-        </div>
-    </div>
-    <div id="main-container">
+    </header>
+    <main id="main-container">
         <img id="logo" src="assets/img/shufflefy-logo.svg" alt="ShuffleFy Logo">
-
         <h1>ShuffleFy</h1>
-
         <p>shuffle your Spotify playlists simply.</p>
-
         <button id="login-button">Login with Spotify</button>
-    </div>
+    </main>
+    <footer>
+        <span>Made with ❤ by <a href="https://github.com/icaropvn" target="_blank">Ícaro</a></span>
+
+        <div id="links-container">
+            <a href="pages/privacy-policy.html" target="_self">Privacy Policy</a>
+            <a id="footer-about-button" href="#">About</a>
+        </div>
+    </footer>
 
     <dialog id="about-dialog">
         <header>
@@ -50,7 +57,11 @@
 
             <h1>How do I shuffle my playlists?</h1>
             <p>To shuffle your playlists, simply click the "Shuffle" button below the playlist you want to shuffle. The process is instant, and if anything goes wrong, don’t worry — your action will be canceled, and you’ll receive a notification.</p>
-            <img src="assets/img/usability-demonstration.gif" alt="ShuffleFy usability demonstration">
+
+            <div id="gif-container">
+                <img class="darker" id="usability-demo" src="assets/img/usability-demo-paused-frame.jpg" alt="ShuffleFy usability demonstration">
+                <span id="gif-message">Hover to see the animation</span>
+            </div>
 
             <h1>Can I restore my playlists to their original order?</h1>
             <p>No. ShuffleFy does not save your playlist’s original order before shuffling. So, make sure you really want to shuffle before confirming. If you’re unsure, we recommend creating a copy of your playlist before using the service.</p>
@@ -59,11 +70,12 @@
             <p>Currently, ShuffleFy only works with Spotify. If there is enough demand, future versions may support other streaming platforms.</p>
 
             <h1>Will ShuffleFy steal my data?</h1>
-            <p>We do not collect or store your personal information beyond what is necessary to authenticate your Spotify account and shuffle your playlists. For more details, check out our <a href="#">Privacy Policy</a>.</p>
-            
+            <p>We do not collect or store your personal information beyond what is necessary to authenticate your Spotify account and shuffle your playlists. For more details, check out our <a href="pages/privacy-policy.html">Privacy Policy</a>.</p>
+        
             <h1>How was ShuffleFy made?</h1>
             <p>ShuffleFy is an open-source application, and you can access its code <a href="https://github.com/icaropvn/ShuffleFy" target="_blank">here</a>!</p>
         </div>
+        <div id="about-end-line"></div>
     </dialog>
 
     <script src="assets/js/theme.js"></script>

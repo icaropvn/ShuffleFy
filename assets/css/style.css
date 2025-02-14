@@ -103,8 +103,8 @@ body.light::-webkit-scrollbar-button:single-button:increment {
 #theme-button:hover + #theme-tooltip {
     opacity: 1;
     pointer-events: auto;
-    transition: transform 0.075s ease-out 1.5s,
-                opacity 0.075s ease-out 1.5s,
+    transition: transform 0.075s ease-out 0.1s,
+                opacity 0.075s ease-out 0.1s,
                 background-color 0.2s ease-out,
                 color 0.2s ease-out;
 }
@@ -188,7 +188,7 @@ body.light #theme-tooltip {
     position: relative;
 }
 
-#about-button {
+#about-button, .about-button {
     width: 45px;
     height: 45px;
     font-family: Inter, Arial, sans-serif;
@@ -199,12 +199,12 @@ body.light #theme-tooltip {
     cursor: pointer;
 }
 
-body.dark #about-button {
+body.dark #about-button, body.dark .about-button {
     background-color: #181818;
     color: #FFFFFF;
 }
 
-body.light #about-button {
+body.light #about-button, body.light .about-button {
     background-color: #ebebeb;
     color: #000000;
 }
@@ -239,18 +239,18 @@ body.light #about-tooltip {
     color: #FFFFFF;
 }
 
-#about-button:hover + #about-tooltip {
+#about-button:hover + #about-tooltip, .about-button:hover + #about-tooltip {
     transform: translate(-50%, 0) scale(1);
     opacity: 1;
     pointer-events: auto;
-    transition: transform 0.075s ease-out 1.5s,
-                opacity 0.075s ease-out 1.5s,
+    transition: transform 0.075s ease-out 0.1s,
+                opacity 0.075s ease-out 0.1s,
                 background-color 0.2s ease-out,
                 color 0.2s ease-out;
 }
 
 #about-dialog {
-    position: relative;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -260,6 +260,7 @@ body.light #about-tooltip {
     border: none;
     border-radius: 10px;
     overflow: hidden;
+    animation: about-dialog-fadeup 0.2s ease-out;
 }
 
 body.dark #about-dialog {
@@ -267,17 +268,35 @@ body.dark #about-dialog {
     color: #FFFFFF;
 }
 
+body.light #about-dialog {
+    background-color: #ffffff;
+    color: #181818;
+}
+
+#about-dialog::backdrop {
+    background-color: #00000091;
+    backdrop-filter: blur(3px);
+}
+
 #about-dialog header {
     display: flex;
     justify-content: space-between;
-    background-color: #131313;
+    align-items: center;
     width: 100%;
-    height: 12%;
+    min-height: 80px;
     padding: 20px 20px;
 }
 
+body.dark #about-dialog header {
+    background-color: #131313;
+}
+
+body.light #about-dialog header {
+    background-color: #e2e2e2;
+}
+
 #about-dialog header h1 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
     margin: 0 0 0 10px;
 }
 
@@ -287,36 +306,59 @@ body.dark #about-dialog {
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
-    color: #ffffff3a;
     font-weight: 300;
     transition: background-color 0.075s ease-out,
                 color 0.075s ease-out;
 }
 
-#about-dialog #close-icon:hover {
+body.dark #about-dialog #close-icon {
+    color: #ffffff3a;
+}
+
+body.light #about-dialog #close-icon {
+    color: #0000003a;
+}
+
+body.dark #about-dialog #close-icon:hover {
     background-color: #2b2b2b;
     color: #FFFFFF;
 }
 
+body.light #about-dialog #close-icon:hover {
+    background-color: #cfcfcf;
+    color: #181818;
+}
+
 #about-dialog-content {
     overflow-y: auto;
-    height: calc(88% - 3px);
-    padding: 40px 50px;
+    height: calc(100% - 83px);
+    padding: min(40px, 5%) min(50px, 5%);
 }
 
 #about-dialog-content::-webkit-scrollbar {
     width: 16px;
 }
 
-#about-dialog-content::-webkit-scrollbar-thumb {
+#about-dialog-content::-webkit-scrollbar-button {
+    display: none;
+}
+
+body.dark #about-dialog-content::-webkit-scrollbar-thumb {
     background: #2c2c2c;
     border-radius: 8px;
     border: 4px solid #181818;
 }
 
+body.light #about-dialog-content::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 8px;
+    border: 4px solid #FFFFFF;
+}
+
 #about-dialog h1 {
     font-family: Inter, Arial, sans-serif;
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    font-weight: 600;
     text-align: start;
     margin: 60px 0 20px 0;
 }
@@ -326,26 +368,87 @@ body.dark #about-dialog {
 }
 
 #about-dialog p {
-    font-size: 1.2rem;
+    font-family: Inter, Arial, sans-serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 200;
     text-align: justify;
     text-indent: 40px;
     line-height: 1.8rem;
     margin: 0;
 }
 
+body.light #about-dialog p {
+    font-weight: 300;
+}
+
+#about-dialog #gif-container {
+    position: relative;
+}
+
 #about-dialog img {
     display: block;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     border-radius: 10px;
     margin: 30px auto 0 auto;
     box-shadow: 0 5px 15px 0 #00000042;
+    filter: brightness(0.2);
+}
+
+#about-dialog img:hover {
+    filter: none;
+}
+
+#about-dialog img:hover + #gif-message {
+    display: none;
+}
+
+#about-dialog #gif-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Inter, Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    color: #FFFFFF;
+    pointer-events: none;
 }
 
 #about-dialog a {
+    text-underline-offset: 4px;
+}
+
+body.dark #about-dialog a {
     color: #2AEA73;
 }
 
-#about-dialog::backdrop {
-    background-color: #00000091;
-    backdrop-filter: blur(3px);
+body.light #about-dialog a {
+    color: #13ad4e;
+    font-weight: 400;
+}
+
+#about-dialog #about-end-line {
+    width: 100%;
+    height: 3px;
+}
+
+body.dark #about-dialog #about-end-line {
+    background-color: #2AEA73;
+}
+
+body.light #about-dialog #about-end-line {
+    background-color: #13AD4E;
+}
+
+@keyframes about-dialog-fadeup {
+    from {
+        transform: translate(-50%, calc(-50% + 70px));
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
 }

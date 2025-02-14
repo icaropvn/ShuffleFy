@@ -18,6 +18,9 @@ function hideSkeletonScreen() {
 
     let buttonsContainer = document.getElementsByClassName('buttons-container')[0]
     buttonsContainer.style.display = 'flex'
+
+    let footer = document.querySelector('footer')
+    footer.style.display = 'flex'
 }
 
 function personalizeGreeting() {
@@ -178,7 +181,7 @@ function loadShuffleAnimation() {
             renderer: 'svg',
             loop: true,
             autoplay: false,
-            path: '/ShuffleFy/assets/img/loading-dots-animation.json'
+            path: '/assets/img/loading-dots-animation.json'
         })
 
         button._animation = animation
@@ -195,10 +198,14 @@ window.addEventListener('scroll', () => {
 
     let scrollTop = window.scrollY || document.documentElement.scrollTop
 
-    if(scrollTop > lastScrollTop)
+    if(scrollTop > lastScrollTop) {
         header.style.transform = 'translateY(-100%)'
-    else
+        header.style.boxShadow = 'none'
+    }
+    else {
         header.style.transform = 'translateY(0)'
+        header.style.boxShadow = '0 5px 10px 0 #0000001e'
+    }
 
     lastScrollTop = scrollTop
 })

@@ -5,6 +5,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
+    box-shadow: 0 5px 10px 0 #0000001e;
     z-index: 1;
     transition: background-color 0.2s ease-out,
                 transform 0.1s ease-out;
@@ -18,12 +19,46 @@ body.light header {
     background-color: #FFFFFF;
 }
 
+#greetings-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#link-to-home {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: #606060;
+    font-family: Inter, Arial, sans-serif;
+    margin: 30px 0 0 25px;
+    text-decoration: none;
+    transition: color 0.1s ease-out;
+}
+
+#link-to-home:hover {
+    color: #2AEA73;
+}
+
+#link-to-home:hover .material-symbols-outlined {
+    transform: translateX(-5px);
+}
+
+#link-to-home .material-symbols-outlined {
+    font-size: 0.8rem;
+    margin-right: 5px;
+    transition: transform 0.05s ease-in-out;
+}
+
+#link-to-home span {
+    font-size: 0.8rem;
+}
+
 #welcome-msg {
     font-family: Commissioner, Arial, sans-serif;
     font-weight: 600;
     display: inline;
     font-size: 3rem;
-    margin: 30px 0 0 25px;
+    margin: 10px 0 0 25px;
     transition: color 0.2s ease-out;
 }
 
@@ -65,7 +100,7 @@ body.light #welcome-msg {
     display: none;
     position: relative;
     text-align: left;
-    margin: 170px 45px 0 45px;
+    margin: 190px 45px 0 45px;
     z-index: -1;
 }
 
@@ -242,6 +277,77 @@ body.dark .shuffle-animation-container svg path {
 
 body.light .shuffle-animation-container svg path {
     fill: #ffffff;
+}
+
+footer {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2AEA73;
+    padding: 30px;
+    font-family: Inter, Arial, sans-serif;
+}
+
+footer img {
+    width: 40px;
+    margin-right: 15px;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+footer div#footer-credits-container a {
+    color: #000000;
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+footer div#footer-links-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 40px;
+}
+
+footer div#footer-links-container a {
+    color: #00000071;
+    text-decoration: none;
+}
+
+footer div#footer-links-container #about-button-footer {
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+footer div#footer-links-container a:hover {
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+footer div#footer-icons-container {
+    gap: 15px;
+}
+
+footer i {
+    font-size: 1.8rem;
+    color: #000000;
+} 
+
+footer div#footer-icons-container a {
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.1s ease-in-out;
+}
+
+footer div#footer-icons-container a:hover {
+    background-color: #00000028;
 }
 
 #notification-container {
@@ -561,6 +667,10 @@ body.dark #shuffle-confirmation #cancel-shuffle:hover {
 
 body.light #shuffle-confirmation #cancel-shuffle:hover {
     background-color: #d3d3d3;
+}
+
+#about-dialog header {
+    position: relative;
 }
 
 @keyframes scroll-playlist-title {
