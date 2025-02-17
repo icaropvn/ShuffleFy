@@ -17,6 +17,8 @@ html, body {
 }
 
 body {
+    display: flex;
+    justify-content: center;
     background-color: #212121;
     color: #FFFFFF;
     font-family: Inter, Arial, sans-serif;
@@ -27,6 +29,7 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1700px;
     height: 100%;
     padding: 10vw;
 }
@@ -86,8 +89,9 @@ a .material-symbols-outlined {
 }
 
 img {
-    width: 300px;
-    margin-right: 10vw;
+    min-width: 150px;
+    width: 25vw;
+    max-width: 300px;
 }
 
 img:hover {

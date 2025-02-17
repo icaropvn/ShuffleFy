@@ -25,7 +25,7 @@ body.light header {
 }
 
 #link-to-home {
-    display: flex;
+    display: none;
     align-items: center;
     width: fit-content;
     color: #606060;
@@ -508,11 +508,12 @@ body.light .notification .notification-txt {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
+    width: 95%;
+    max-width: 600px;
     height: 300px;
     border: none;
     border-radius: 10px;
-    padding: 30px 40px;
+    padding: min(30px, 8%) min(40px, 5%);
     animation: confirmation-dialog-fadedown 0.2s ease-out;
 }
 
@@ -532,11 +533,12 @@ body.light #shuffle-confirmation {
 }
 
 #shuffle-confirmation h1 {
+    font-size: clamp(1.4rem, 5vw, 2rem);
     font-weight: 700;
 }
 
 #shuffle-confirmation p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
     font-weight: 200;
     margin-top: 20px;
     text-align: justify;

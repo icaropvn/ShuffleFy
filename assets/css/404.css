@@ -28,7 +28,7 @@ main {
     align-items: center;
     flex-direction: column;
     height: 100%;
-    margin: 0 50px 0 50px;
+    margin: 0 min(50px, 5%) 0 min(50px, 5%);
 }
 
 #code-container {
@@ -39,18 +39,19 @@ main {
 
 #code-container span {
     font-family: Commissioner, Arial, sans-serif;
-    font-size: 6rem;
+    font-size: clamp(3rem, 20vw, 6rem);
     font-weight: 500;
 }
 
 #code-container img {
-    width: 80px;
+    width: 20vw;
+    max-width: 80px;
     margin-top: 10px;
 }
 
 p {
     font-weight: 200;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 5vw, 1.3rem);
     margin-top: 10px;
     text-align: center;
 }

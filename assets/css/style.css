@@ -254,7 +254,7 @@ body.light #about-tooltip {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70vw;
+    width: 95%;
     max-width: 1000px;
     height: 80vh;
     border: none;
@@ -409,7 +409,7 @@ body.light #about-dialog p {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: Inter, Arial, sans-serif;
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 5vw, 1.6rem);
     font-weight: 500;
     text-align: center;
     color: #FFFFFF;

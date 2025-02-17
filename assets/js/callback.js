@@ -13,6 +13,9 @@ function hideSkeletonScreen() {
 
     skeletonElements.forEach(element => element.style.display = 'none')
 
+    let backToHomeButton = document.querySelector('#link-to-home')
+    backToHomeButton.style.display = 'flex'
+
     let divider = document.getElementsByClassName('divider')[0]
     divider.style.display = 'block'
 
@@ -181,7 +184,7 @@ function loadShuffleAnimation() {
             renderer: 'svg',
             loop: true,
             autoplay: false,
-            path: '/ShuffleFy/assets/img/loading-dots-animation.json'
+            path: '/assets/img/loading-dots-animation.json'
         })
 
         button._animation = animation
