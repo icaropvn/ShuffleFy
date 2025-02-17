@@ -184,7 +184,7 @@ function loadShuffleAnimation() {
             renderer: 'svg',
             loop: true,
             autoplay: false,
-            path: '/assets/img/loading-dots-animation.json'
+            path: '/ShuflleFy/assets/img/loading-dots-animation.json'
         })
 
         button._animation = animation

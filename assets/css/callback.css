@@ -1,7 +1,7 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 20px 30px 20px;
+    /* display: flex;
+    justify-content: space-between; */
+    padding: min(20px, 5%) min(20px, 5%) min(30px, 5%) min(45px, 5%);
     width: 100%;
     position: fixed;
     top: 0;
@@ -19,9 +19,10 @@ body.light header {
     background-color: #FFFFFF;
 }
 
-#greetings-container {
+#sub-header {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
 #link-to-home {
@@ -30,7 +31,7 @@ body.light header {
     width: fit-content;
     color: #606060;
     font-family: Inter, Arial, sans-serif;
-    margin: 30px 0 0 25px;
+    margin: 30px 0 0 0;
     text-decoration: none;
     transition: color 0.1s ease-out;
 }
@@ -56,9 +57,8 @@ body.light header {
 #welcome-msg {
     font-family: Commissioner, Arial, sans-serif;
     font-weight: 600;
-    display: inline;
-    font-size: 3rem;
-    margin: 10px 0 0 25px;
+    font-size: clamp(1.6rem, 10vw, 3rem);
+    margin: 10px 0 0 0;
     transition: color 0.2s ease-out;
 }
 
@@ -74,7 +74,7 @@ body.light #welcome-msg {
     display: none;
     height: fit-content;
     gap: 10px;
-    margin-left: 40px;
+    margin-left: 10px;
 }
 
 #theme-button {
@@ -675,6 +675,8 @@ body.light #shuffle-confirmation #cancel-shuffle:hover {
     position: relative;
 }
 
+/* Callback Animations */
+
 @keyframes scroll-playlist-title {
     0% {
         transform: translateX(0%);
@@ -695,5 +697,70 @@ body.light #shuffle-confirmation #cancel-shuffle:hover {
     to {
         transform: translate(-50%, -50%);
         opacity: 1;
+    }
+}
+
+/* Callback Media Query */
+
+@media screen and (width <= 480px) {
+    #welcome-msg {
+        width: fit-content;
+        margin: 30px auto 0 auto;
+        text-align: center;
+    }
+
+    .divider {
+        margin: 240px 45px 0 45px;
+    }
+
+    .playlist-item {
+        flex: 0 0 200px;
+        max-width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #shuffle-confirmation {
+        height: fit-content;
+    }
+
+    #shuffle-confirmation #confirmation-btns-container {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    #notification-container {
+        bottom: 30px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .notification-wrapper {
+        width: 250px;
+        height: 80px;
+    }
+
+    .notification-icon {
+        font-size: 1.4rem !important;
+    }
+
+    .notification-txt h3 {
+        font-size: 1rem;
+    }
+
+    .notification-txt p {
+        font-size: 0.7rem;
+    }
+
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    footer div#footer-links-container {
+        position: static;
+        transform: none;
     }
 }

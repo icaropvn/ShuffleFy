@@ -16,38 +16,37 @@
 </head>
 <body class="dark">
     <header id="header">
-        <div class="skeleton-element" id="skeleton-welcome-msg">
+        <div class="skeleton-element" id="skeleton-buttons">
             <div class="skeleton-shimmer"></div>
         </div>
-        <div id="greetings-container">
+        <div id="sub-header">
             <a href="../index.html" id="link-to-home">
                 <span class="material-symbols-outlined">arrow_back_ios</span>
                 <span>Back to home</span>
             </a>
-            <h1 id="welcome-msg"></h1>
+            <div class="buttons-container">
+                <div id="about-container">
+                    <button class="about-button">?</button>
+                    <span id="about-tooltip">About ShuffleFy</span>
+                </div>
+                <div id="theme-container">
+                    <label for="checkbox" id="theme-button">
+                        <input type="checkbox" class="checkbox" id="checkbox"/>
+                        <div class="theme-icons">
+                            <span class="material-symbols-outlined moon">dark_mode</span>
+                            <span class="material-symbols-outlined sun">light_mode</span>
+                        </div>
+                    </label>
+                    <span id="theme-tooltip">Change theme</span>
+                </div>
+                <img id="profile-picture" src="#" alt="User Profile Picture">
+            </div>
         </div>
 
-        <div class="skeleton-element" id="skeleton-buttons">
+        <div class="skeleton-element" id="skeleton-welcome-msg">
             <div class="skeleton-shimmer"></div>
         </div>
-        <div class="buttons-container">
-            <div id="about-container">
-                <button class="about-button">?</button>
-                <span id="about-tooltip">About ShuffleFy</span>
-            </div>
-            <div id="theme-container">
-                <label for="checkbox" id="theme-button">
-                    <input type="checkbox" class="checkbox" id="checkbox"/>
-                    <div class="theme-icons">
-                        <span class="material-symbols-outlined moon">dark_mode</span>
-                        <span class="material-symbols-outlined sun">light_mode</span>
-                    </div>
-                </label>
-                <span id="theme-tooltip">Change theme</span>
-            </div>
-
-            <img id="profile-picture" src="#" alt="User Profile Picture">
-        </div>
+        <h1 id="welcome-msg"></h1>
     </header>
 
     <main>
