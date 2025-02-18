@@ -71,7 +71,7 @@ function showNotification(type, title) {
         notification.addEventListener('transitionend', () => {
             notification.remove()
         })
-    }, 12000)
+    }, 6000)
 }
 
 function createNotification(type, title) {
