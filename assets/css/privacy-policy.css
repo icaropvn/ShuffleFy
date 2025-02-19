@@ -34,7 +34,9 @@ body::-webkit-scrollbar-thumb:hover {
     top: 0;
     background-color: #212121;
     color: #FFFFFF;
-    padding: 30px 40px;
+    box-shadow: 0 5px 10px 0 #0000001e;
+    padding: min(30px, 8%) min(40px, 5%);
+    z-index: 99;
 }
 
 #main-header a {
@@ -69,6 +71,7 @@ body::-webkit-scrollbar-thumb:hover {
     font-weight: 600;
     font-size: 2.5rem;
     margin-top: 10px;
+    margin-right: 20px;
 }
 
 #main-header img {
@@ -372,5 +375,27 @@ body.light #about-dialog #about-end-line {
     to {
         transform: translate(-50%, -50%);
         opacity: 1;
+    }
+}
+
+/* Privacy Policy Media Query */
+
+@media screen and (width <= 350px) {
+    main {
+        padding-top: 160px;
+    }
+}
+
+@media screen and (width <= 480px) {
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    footer div#footer-links-container {
+        position: static;
+        transform: none;
     }
 }
