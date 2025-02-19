@@ -1,6 +1,13 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
-    /* display: flex;
-    justify-content: space-between; */
     padding: min(20px, 5%) min(20px, 5%) min(30px, 5%) min(45px, 5%);
     width: 100%;
     position: fixed;
@@ -94,6 +101,10 @@ body.light #welcome-msg {
     width: 45px;
     border-radius: 50%;
     margin: 0 0 0 10px;
+}
+
+main {
+    flex: 1;
 }
 
 .divider {
