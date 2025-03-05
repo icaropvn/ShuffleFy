@@ -1,3 +1,12 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 #index-header {
     width: 100%;
     margin: 20px 0 0 0;
@@ -26,13 +35,14 @@
 }
 
 #main-container {
+    display: block;
     width: 100%;
-    height: 78vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 5%;
+    flex: 1 0 auto;
 }
 
 #logo {
@@ -41,6 +51,7 @@
     max-width: 220px;
     min-width: 80px;
     margin: 0 auto;
+    transition: width 0.3s ease-out;
 }
 
 h1 {
@@ -107,14 +118,14 @@ body.light #login-button:hover {
 
 footer {
     display: block;
-    position: absolute;
-    bottom: 0;
+    position: static;
     font-family: Inter, Arial, sans-serif;
     font-weight: 300;
     font-size: clamp(0.5rem, 5vw, 0.9rem);
     width: 100%;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 20px 0 30px 0;
+    flex-shrink: 0;
 }
 
 footer span {
@@ -168,3 +179,45 @@ body.light footer #links-container a:hover {
     background-color: #dddddd;
 }
 
+/* Index vertical Media Queries */
+
+@media screen and (height <= 750px) {
+    #index-header {
+        /* margin-top: 10px; */
+    }
+    
+    #logo {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 12vw, 2.5rem);
+        margin-top: 10px;
+    }
+
+    p {
+        font-size: clamp(0.9rem, 5vw, 1.3rem);
+    }
+
+    #login-button {
+        max-width: 200px;
+        height: 35px;
+        margin: 30px auto 0 auto;
+    }
+
+    footer {
+        font-size: clamp(0.5rem, 5vw, 0.7rem);
+    }
+
+    #about-dialog {
+        max-width: 600px !important;
+    }
+}
+
+@media screen and (height <= 750px) and (width <= 480px) {
+    #login-button {
+        max-width: 200px;
+        height: 35px;
+        margin: min(60px, 10%) auto 0 auto;
+    }
+}
