@@ -93,3 +93,13 @@ a .material-symbols-outlined {
     font-weight: 300;
     transition: transform 0.075s ease-out;
 }
+
+@media screen and (width <= 480px) {
+    #code-container {
+        margin-bottom: 30px;
+    }
+
+    a {
+        margin-top: 60px;
+    }
+}
