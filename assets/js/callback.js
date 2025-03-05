@@ -66,6 +66,7 @@ function displayPlaylists(userPlaylists) {
 
         let playlistTitle = document.createElement('p')
         playlistTitle.textContent = playlist.name
+        playlistTitle.setAttribute('translate', 'no')
         titleWrapper.appendChild(playlistTitle)
 
         titleWrapper.addEventListener('mouseover', () => {
@@ -112,6 +113,7 @@ function displayPlaylists(userPlaylists) {
         let shuffleIcon = document.createElement('span')
         shuffleIcon.classList.add('material-symbols-outlined')
         shuffleIcon.classList.add('shuffle-icon')
+        shuffleIcon.setAttribute('translate', 'no')
         shuffleIcon.textContent = 'shuffle'
         shuffleButton.appendChild(shuffleIcon)
 
