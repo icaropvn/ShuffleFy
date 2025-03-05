@@ -37,11 +37,11 @@ main {
 h1 {
     font-family: Commissioner, Arial, sans-serif;
     font-weight: 600;
-    font-size: 4rem;
+    font-size: clamp(2rem, 12vw, 4rem);
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 6vw, 1.5rem);
     font-weight: 200;
     margin: 20px 50px 0 0;
 }
@@ -104,5 +104,40 @@ img:hover {
     }
     100% {
         transform: rotate(-360deg);
+    }
+}
+
+/* Error page media query */
+
+@media screen and (width <= 480px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main img {
+        min-width: 100px;
+        margin-bottom: 30px;
+        order: 1;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    main div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 2;
+    }
+
+    main div h1 {
+        margin-bottom: 20px;
+    }
+
+    main div #error-msg {
+        text-align: center;
+        margin-bottom: 30px;
     }
 }
